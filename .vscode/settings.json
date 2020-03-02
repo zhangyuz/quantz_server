@@ -2,5 +2,16 @@
     "python.pythonPath": "/Users/yuz/.conda/envs/quant/bin/python",
     "python.linting.enabled": true,
     "python.formatting.provider": "autopep8",
-    "editor.formatOnSave": true
+    "editor.formatOnSave": true,
+    "restructuredtext.confPath": "",
+    "python.testing.unittestArgs": [
+        "-v",
+        "-s",
+        "./test",
+        "-p",
+        "*_test.py"
+    ],
+    "python.testing.pytestEnabled": false,
+    "python.testing.nosetestsEnabled": false,
+    "python.testing.unittestEnabled": true
 }
