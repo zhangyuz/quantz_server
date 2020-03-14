@@ -11,8 +11,8 @@ class IndexDailyItem(MongoengineObjectType):
         interfaces = (Node,)
 
 
-class Query(graphene.ObjectType):
+class IndexDailyQuery(graphene.ObjectType):
     index_daily = MongoengineConnectionField(IndexDailyItem)
 
 
-schema = graphene.Schema(query=Query, types=[IndexDailyItem])
+schema = graphene.Schema(query=IndexDailyQuery, types=[IndexDailyItem])
