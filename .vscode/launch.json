@@ -32,32 +32,24 @@
             "console": "integratedTerminal"
         },
         {
-            "name": "Python: Django",
-            "type": "python",
-            "request": "launch",
-            "program": "${workspaceFolder}/manage.py",
-            "console": "integratedTerminal",
-            "args": [
-                "runserver",
-                "--noreload",
-                "--nothreading"
-            ],
-            "django": true
-        },
-        {
             "name": "Python: Flask",
             "type": "python",
             "request": "launch",
             "module": "flask",
             "env": {
-                "FLASK_APP": "app.py"
+                "FLASK_APP": "app.py",
+                "FLASK_ENV": "development",
+                "FLASK_DEBUG": "1"
             },
             "args": [
                 "run",
-                "--no-debugger",
-                "--no-reload"
+                "--debugger",
+                "--reload"
             ],
-            "jinja": true
+            "jinja": true,
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/quantz_server",
+            "justMyCode": false
         },
         {
             "name": "Python: Current File (External Terminal)",

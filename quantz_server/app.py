@@ -18,5 +18,5 @@ app.add_url_rule(
 )
 
 if __name__ == "__main__":
-    app.run(host='localhost', debug=True)
+    app.run(host='127.0.0.1', debug=True)
     # app.run(host='localhost', debug=True)

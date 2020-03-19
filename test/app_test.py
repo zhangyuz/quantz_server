@@ -33,6 +33,10 @@ query = """
 url = 'http://localhost:8080/graphql'
 
 
+def hello_dict_args(arg1='o1', arg2='02', **args):
+    print('\narg1=%s arg2=%s args=%s\n' % (arg1, arg2, args))
+
+
 class AppTest(TestCase):
     def setUp(self):
         return super().setUp()
@@ -51,3 +55,7 @@ class AppTest(TestCase):
         gql_query = gql(query)
         resp = gql_client.execute(gql_query)
         print(resp)
+
+    def test_dict_args(self):
+        test_args = dict({'arg1': '111', 'arg2': '2222', 'arg3': '3333'})
+        hello_dict_args(**test_args)
