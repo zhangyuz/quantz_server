@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, jsonify
 from flask_cors import CORS
 from flask_graphql import GraphQLView
 from mongoengine import connect
@@ -17,6 +17,11 @@ app.add_url_rule(
     view_func=GraphQLView.as_view('graphql', schema=schema, graphiql=True)
 )
 
+
+@app.route('/ping', methods=['GET'])
+def ping_pong():
+    return jsonify('pong!')
+
+
 if __name__ == "__main__":
-    app.run(host='127.0.0.1', debug=True)
-    # app.run(host='localhost', debug=True)
+    app.run(host='0.0.0.0', debug=True)

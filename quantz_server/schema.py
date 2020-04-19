@@ -12,9 +12,9 @@ class IndexDailyItem(MongoengineObjectType):
         order_by = '-trade_date'
 
 
-class IndexDailyQuery(graphene.ObjectType):
+class QuantZQuery(graphene.ObjectType):
     index_daily = MongoengineConnectionField(
         IndexDailyItem)
 
 
-schema = graphene.Schema(query=IndexDailyQuery, types=[IndexDailyItem])
+schema = graphene.Schema(query=QuantZQuery, types=[IndexDailyItem])
